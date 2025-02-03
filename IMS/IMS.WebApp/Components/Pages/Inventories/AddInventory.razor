@@ -1,6 +1,7 @@
 ﻿@page "/addinventory"
 
 @inject IAddInventoryUseCase AddInventoryUseCase
+@inject NavigationManager NavigationManager
 
 <h3>Add Inventory</h3>
 <br />
@@ -29,14 +30,18 @@
     <br />
 
     <button type="submit" class="btn btn-primary">Save</button>
+    &nbsp;
+    <a href="/inventories" class="btn btn-primary">Cancel</a>
 </EditForm>
 
 @code {
     [SupplyParameterFromForm]
     private Inventory inventory { get; set; } = new Inventory();
 
-    private async void Save()
+    private async Task Save()
     {
-       await AddInventoryUseCase.ExecuteAsync(inventory);
+        await AddInventoryUseCase.ExecuteAsync(inventory);
+
+        NavigationManager.NavigateTo("/inventories");
     }
 }
