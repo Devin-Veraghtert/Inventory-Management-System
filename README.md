@@ -1,1 +1,1 @@
-# Build-Inventory-Management
+# Blazor Course - Build-Inventory-Management
