@@ -13,5 +13,6 @@ namespace IMS.UseCases.PluginInterfaces
         Task<Inventory> GetInventoryByIdAsync(int iventoryId);
         Task<IEnumerable<Inventory>> GetInventoriesByNameAsync(string name);
         Task UpdateInventoryAsync(Inventory inventory);
+        Task DeleteInventoryByIdAsync(int inventoryId);
     }
 }
