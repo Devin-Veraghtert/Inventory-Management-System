@@ -28,6 +28,11 @@
         <InputNumber id="price" class="form-control" @bind-Value="product.Price" />
         <ValidationMessage For="() => product.Price" />
     </div>
+    
+    <div class="form-group">
+        <label for="price">Inventories</label>
+        <SearchProductInventoriesComponent />
+    </div>
 
     <br />
 
