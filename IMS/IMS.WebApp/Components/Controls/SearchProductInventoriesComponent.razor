@@ -7,17 +7,20 @@
 
 @if (inventories is not null && inventories.Count > 0)
 {
-    <div style="overflow-y:auto; max-height:300px; border:1px solid silver; padding-top:15px">
-        <ul style="list-style-type: none">
+    <div class="search">
+        <ul>
             @foreach (var inventory in inventories)
             {
-                <li @key="inventory.InventoryId" style="cursor: pointer">@inventory.InventoryName</li>
+                <li @key="inventory.InventoryId" @onclick="() => { HandleSelectInventory(inventory); }">@inventory.InventoryName</li>
             }
         </ul>
     </div>
 }
 
 @code {
+    [Parameter]
+    public EventCallback<Inventory> OnInventorySelected { get; set; }
+
     private string _searchFilter;
     private string searchFilter
     {
@@ -37,5 +40,11 @@
         inventories = (await ViewInventoriesByNameUseCase.ExecuteAsync(this.searchFilter)).ToList();
 
         StateHasChanged();
+    }
+
+    private async Task HandleSelectInventory(Inventory inventory)
+    {
+        await OnInventorySelected.InvokeAsync(inventory);
+        inventories.Clear();
     }
 }
