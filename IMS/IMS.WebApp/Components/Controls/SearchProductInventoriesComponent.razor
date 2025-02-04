@@ -11,7 +11,7 @@
         <ul>
             @foreach (var inventory in inventories)
             {
-                <li @key="inventory.InventoryId" @onclick="() => { HandleSelectInventory(inventory); }">@inventory.InventoryName</li>
+                <li @key="inventory.InventoryId" @onclick="async () => await HandleSelectInventory(inventory)">@inventory.InventoryName</li>
             }
         </ul>
     </div>
