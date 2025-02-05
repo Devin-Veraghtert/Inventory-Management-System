@@ -1,0 +1,20 @@
+﻿@page "/purchase"
+
+@inject IViewInventoriesByNameUseCase ViewInventoriesByNameUseCase
+
+@rendermode InteractiveServer
+
+<h3>Purchase Inventory</h3>
+<br />
+
+<AutoCompleteComponent  Label="SearchInventory" SearchFunction="SearchInventory"/>
+
+@code {
+    private List<ItemViewModel>? SearchInventory(string name)
+    {
+        var list = ViewInventoriesByNameUseCase.ExecuteAsync(name).GetAwaiter().GetResult();
+        if (list is null) return null;
+
+        return list.Select(i => new ItemViewModel { Id = i.InventoryId, Name = i.InventoryName })?.ToList();
+    }
+}
