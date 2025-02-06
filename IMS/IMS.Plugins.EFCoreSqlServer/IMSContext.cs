@@ -10,6 +10,11 @@ namespace IMS.Plugins.EFCoreSqlServer
 {
     public class IMSContext : DbContext
     {
+        public IMSContext(DbContextOptions<IMSContext> options): base(options)
+        {
+
+        }
+
         public DbSet<Inventory>? Inventories { get; set; }
         public DbSet<Product>? Products { get; set; }
         public DbSet<ProductInventory>? ProductInventories { get; set; }
@@ -36,7 +41,7 @@ namespace IMS.Plugins.EFCoreSqlServer
                 new Inventory { InventoryId = 1, InventoryName = "Bike Seat", Quantity = 10, Price = 2 },
                 new Inventory { InventoryId = 2, InventoryName = "Bike Body", Quantity = 10, Price = 15 },
                 new Inventory { InventoryId = 3, InventoryName = "Bike Wheels", Quantity = 20, Price = 8 },
-                new Inventory { InventoryId = 4, InventoryName = "Bike Pedels", Quantity = 20, Price = 1 },
+                new Inventory { InventoryId = 4, InventoryName = "Bike Pedels", Quantity = 20, Price = 1 }
             );
 
             modelBuilder.Entity<Product>().HasData(
