@@ -1,17 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="ViewModels\NewFolder\**" />
-    <Content Remove="ViewModels\NewFolder\**" />
-    <EmbeddedResource Remove="ViewModels\NewFolder\**" />
-    <None Remove="ViewModels\NewFolder\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.12">
@@ -27,8 +20,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\IMS.CoreBusiness\IMS.CoreBusiness.csproj" />
-    <ProjectReference Include="..\IMS.Plugins.InMemory\IMS.Plugins.InMemory.csproj" />
-    <ProjectReference Include="..\IMS.UseCases\IMS.UseCases.csproj" />
   </ItemGroup>
 
 </Project>
