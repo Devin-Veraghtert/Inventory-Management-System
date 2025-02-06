@@ -22,7 +22,7 @@ namespace IMS.UseCases.Activities
 
         public async Task ExecuteAsync(string number, Inventory inventory, int quantity, string doneBy)
         {
-            inventoryTransactionRepository.PurchaseAsync(number, inventory, quantity, doneBy, inventory.Price);
+            await inventoryTransactionRepository.PurchaseAsync(number, inventory, quantity, doneBy, inventory.Price);
 
             inventory.Quantity += quantity;
             await this.inventoryRepository.UpdateInventoryAsync(inventory);
