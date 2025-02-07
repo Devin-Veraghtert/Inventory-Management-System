@@ -14,3 +14,7 @@ Dit project is een Inventory Management System waarin gebruikers producten en hu
 - 📦 **Voorraadbeheer**: Beheer de voorraadniveaus van producten.
 - 🔍 **Zoekfunctionaliteit**: Zoek snel naar producten op naam of categorie.
 - 🛡️ **Authenticatie en Autorisatie**: Beveiligde toegang met gebruikersrollen.
+
+## 🎓 Certificaat
+Na het succesvol afronden van de cursus heb ik een certificaat van voltooiing ontvangen.
+<br/>[Certificaat](https://github.com/Devin-Veraghtert/Inventory-Management-System/blob/main/certificaat_blazor.pdf)
